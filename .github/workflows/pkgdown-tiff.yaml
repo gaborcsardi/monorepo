@@ -39,7 +39,7 @@ jobs:
       - name: Copy site to the right place
         run: |
           mkdir -p docs
-          cp -r tiff/docs tiff
+          mv tiff/docs docs/tiff
         
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'

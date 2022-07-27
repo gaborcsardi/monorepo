@@ -39,7 +39,7 @@ jobs:
       - name: Copy site to the right place
         run: |
           mkdir -p docs
-          cp -r zip/docs zip
+          mv zip/docs docs/zip
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
