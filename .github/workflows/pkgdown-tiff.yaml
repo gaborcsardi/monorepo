@@ -9,11 +9,13 @@ on:
     types: [published]
   workflow_dispatch:
 
-name: pkgdown
+name: pkgdown-tiff
 
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
+    concurrency:
+      group: pkgdown
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
