@@ -36,9 +36,10 @@ jobs:
         shell: Rscript {0}
         working-directory: zip
 
-      - name: debug
+      - name: Copy site to the right place
         run: |
-          find . -type d -not -path '*/\.git*'
+          mkdir -p docs
+          cp -r zip/docs zip
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
